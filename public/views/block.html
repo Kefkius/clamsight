@@ -57,10 +57,14 @@
               <span data-ng-show="!block.isMainChain" class="text-danger"> <span class="glyphicon glyphicon-warning-sign"></span> (Orphaned)</span>
             </td>
           </tr>
-          <tr>
+          <tr data-ng-show="block.height <= 10000">
             <td><strong translate>Block Reward</strong></td>
-            <td class="text-right text-muted">{{$root.currency.getConvertion(block.reward) || block.reward + ' BTC'}}</td>
+            <td class="text-right text-muted">{{$root.currency.getConvertion(block.reward) || block.reward + ' CLAMS'}}</td>
           </tr> 
+          <tr data-ng-show="block.height > 10000">
+            <td><strong translate>Mint Amount</strong></td>
+            <td class="text-right text-muted">{{$root.currency.getConvertion(block.mint) || block.mint + ' CLAMS'}}</td>
+          </tr>
           <tr>
             <td><strong translate>Timestamp</strong></td>
             <td class="text-right text-muted">{{block.time * 1000 | date:'medium'}}</td>

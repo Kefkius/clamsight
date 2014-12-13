@@ -122,7 +122,17 @@
     </div>
   </div>
   <div class="col-md-6">
-    <div class="row">
+
+    <div class="row" data-ng-if="tx.isCoinBase">
+      <div class="col-md-12 transaction-vin-vout" data-ng-repeat="vout in tx.vout">
+        <div class="ellipsis">
+          <span translate>No Outputs (Proof of Stake)</span>
+        </div>
+      </div>
+    </div>
+    <div class="row" data-ng-if="!tx.isCoinBase">
+
+<!--    <div class="row"> -->
       <!-- Simple view >>> -->
       <div data-ng-if="!itemsExpanded" data-ng-init="currentOutNoExpanded=0; sizeOutNoExpanded=5">
         <div data-ng-repeat="vout in tx.voutSimple| startFrom:currentOutNoExpanded*sizeOutNoExpanded | limitTo:sizeOutNoExpanded">
