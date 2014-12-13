@@ -1,12 +1,12 @@
 {
-  "name": "insight-bitcore",
-  "description": "An open-source frontend for the Insight API. The Insight API provides you with a convenient, powerful and simple way to query and broadcast data on the bitcoin network and build your own services with it.",
+  "name": "clamsight-clamcore",
+  "description": "An open-source frontend for the Clamsight API. The Clamsight API provides you with a convenient, powerful and simple way to query and broadcast data on the CLAMS network and build your own services with it.",
   "version": "0.2.5",
   "author": {
     "name": "Ryan X Charles",
     "email": "ryan@bitpay.com"
   },
-  "repository": "git://github.com/bitpay/insight.git",
+  "repository": "git://github.com/kefkius/clamsight.git",
   "contributors": [
     {
       "name": "Matias Alejo Garcia",
@@ -30,23 +30,23 @@
     }
   ],
   "bugs": {
-    "url": "https://github.com/bitpay/insight/issues"
+    "url": "https://github.com/kefkius/clamsight/issues"
   },
-  "homepage": "https://github.com/bitpay/insight",
+  "homepage": "https://github.com/kefkius/clamsight",
   "license": "MIT",
   "keywords": [
-    "insight",
+    "clamsight",
     "blockchain",
     "blockexplorer",
-    "bitcoin",
-    "bitcore",
+    "clam",
+    "clamcore",
     "front-end"
   ],
   "scripts": {
-    "start": "INSIGHT_PUBLIC_PATH=public node node_modules/.bin/insight-bitcore-api"
+    "start": "INSIGHT_PUBLIC_PATH=public node node_modules/.bin/clamsight-clamcore-api"
   },
   "dependencies": {
-    "insight-bitcore-api": ">0.2.10"
+    "clamsight-clamcore-api": "git://github.com/kefkius/clamsight-api.git"
   },
   "devDependencies": {
     "bower": "~1.2.8",
