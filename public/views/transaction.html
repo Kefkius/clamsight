@@ -70,6 +70,10 @@
             </div>
           <td data-ng-show="!tx.blockhash" class="text-muted text-right">Unconfirmed</td>
         </tr>
+        <tr data-ng-show="tx['clam-speech']">
+          <td><strong>ClamSpeech</strong></td>
+          <td class="text-muted text-right">{{tx['clam-speech']}}</td>
+        </tr>
         <tr data-ng-show="tx.locktime">
           <td><strong>LockTime</strong></td>
           <td class="text-muted text-right">{{tx.locktime}}</td>
