@@ -117,7 +117,7 @@
     </div> <!-- END OF COL-8 -->
 
     <div class="col-xs-12 col-md-4 col-gray">
-      <h2 translate>Bitcoin node information</h2>
+      <h2 translate>CLAMS node information</h2>
       <table class="table" data-ng-controller="StatusController" data-ng-init="getStatus('Info')">
         <thead  data-ng-include src="'/views/includes/infoStatus.html'"></thead>
         <tbody>
@@ -142,8 +142,8 @@
             <td class="text-right">{{info.connections}}</td>
           </tr>
           <tr>
-           <td translate>Mining Difficulty</td>
-            <td class="text-right">{{info.difficulty}}</td>
+           <td translate>Stake Difficulty</td>
+            <td class="text-right">{{info.difficulty['proof-of-stake']}}</td>
           </tr>
           <tr>
             <td translate>Testnet</td>
