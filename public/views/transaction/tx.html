@@ -126,7 +126,7 @@
     <div class="row" data-ng-if="tx.isCoinBase">
       <div class="col-md-12 transaction-vin-vout" data-ng-repeat="vout in tx.vout">
         <div class="ellipsis">
-          <span translate>No Outputs (Proof of Stake)</span>
+          <span translate>No Outputs (Stake Reward in Following Transaction)</span>
         </div>
       </div>
     </div>
@@ -145,7 +145,8 @@
               </div>
 
               <div class="ellipsis">
-                <span data-ng-show="vout.notAddr">{{vout.addr}}</span>
+                <span data-ng-show="vout.notAddr && !tx.isStake">{{vout.addr}}</span>
+                <span data-ng-show="vout.notAddr && tx.isStake">(Stake Reward Identifier)</span>
                 <span class="text-muted" title="Current Bitcoin Address" data-ng-show="address == $root.currentAddr" data-ng-repeat="address in vout.addr.split(',')">{{vout.addr}}</span>
                 <a href="/address/{{address}}"  data-ng-show="!vout.notAddr && address != $root.currentAddr" data-ng-repeat="address in vout.addr.split(',')">{{address}}</a>
               </div>
@@ -208,7 +209,7 @@
 
 <div class="line-top row" data-ng-hide="!tx">
   <div class="col-xs-6 col-sm-4 col-md-4">
-    <span data-ng-show="!tx.isCoinBase &&  !isNaN(parseFloat(tx.fees))"
+    <span data-ng-show="!tx.isCoinBase && !tx.isStake &&  !isNaN(parseFloat(tx.fees))"
       class="txvalues txvalues-default"><span translate>Fee</span>: {{$root.currency.getConvertion(tx.fees) || tx.fees + 'CLAMS'}} </span>
   </div>
   <div class="col-xs-6 col-sm-8 col-md-8 text-right">
